@@ -36,7 +36,7 @@ export const syncUserCreation = inngest.createFunction(
       full_name: `${first_name || ""} ${last_name || ""}`.trim(),
       profile_picture: profile_image_url || image_url || "",
     };
-
+    console.log(" User notsaved to DB :(");
     await User.create(userData);
     console.log("✅ User saved to DB:", userData);
 
