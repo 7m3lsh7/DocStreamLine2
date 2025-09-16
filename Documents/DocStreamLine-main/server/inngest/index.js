@@ -12,7 +12,7 @@ export const syncUserCreation = inngest.createFunction(
   { id: "sync-user-creation" },
   { event: "clerk/user.created" },
   async ({ event }) => {
-    console.log("🔥 User Created Event:", event.data);
+    console.log("🔥 User Creatd Event:", event.data);
 
     const {
       id,
