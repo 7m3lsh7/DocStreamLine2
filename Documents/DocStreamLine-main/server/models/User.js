@@ -6,9 +6,10 @@ const userSchema = new mongoose.Schema(
     _id: { type: String },
     username: { type: String, unique: true },
     email: { type: String },
+password: { type: String, required: false },
 
     // --- Profile Details ---
-    full_name: { type: String},
+    full_name: { type: String },
     bio: { type: String, default: "Hey Doctors!" },
     profile_picture: { type: String, default: "" },
     cover_photo: { type: String, default: "" },
