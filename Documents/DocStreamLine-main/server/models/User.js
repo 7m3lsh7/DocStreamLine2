@@ -3,12 +3,12 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema(
   {
     // --- Core Identifiers ---
-    _id: { type: String, required: true },
+    _id: { type: String },
     username: { type: String, unique: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true },
+    email: { type: String },
+
     // --- Profile Details ---
-    full_name: { type: String, required: true },
+    full_name: { type: String},
     bio: { type: String, default: "Hey Doctors!" },
     profile_picture: { type: String, default: "" },
     cover_photo: { type: String, default: "" },
