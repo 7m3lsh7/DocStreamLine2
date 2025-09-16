@@ -9,7 +9,7 @@ export const inngest = new Inngest({ id: "socialmediaApp-app" });
  * Function: Create user
  */
 export const syncUserCreation = inngest.createFunction(
-  { id: "sync-user-creation" },
+  { id: "sync-user-from-clerk" },
   { event: "clerk/user.created" },
   async ({ event }) => {
     console.log("🔥 User Creatd Event:", event.data);
