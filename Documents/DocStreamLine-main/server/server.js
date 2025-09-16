@@ -7,21 +7,23 @@ import { serve } from "inngest/express";
 
 const app = express();
 
-  await connectDB();
+await connectDB();
 // middleware
 app.use(express.json());
 app.use(cors());
 
 // health check
-app.get("/", (req, res) => {res.send("Server is running");});
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 // Inngest route
 app.use("/api/inngest", serve({ client: inngest, functions }));
 // Connect to DB and start server
-const PORT = process.env.PORT || 4000; 
+const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => { console.log(`✅ Server is running on port ${PORT}`);});
-
-
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
+});
 
 // 404 handler
 app.use((req, res) => {
@@ -33,5 +35,3 @@ app.use((err, req, res, next) => {
   console.error("Server error:", err);
   res.status(500).json({ error: "Internal Server Error" });
 });
-
-
